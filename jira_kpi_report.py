@@ -181,9 +181,9 @@ TASK_CATEGORIES = {
 
 # Define teams that use task categories
 TEAM_CATEGORIES = {
-    'LDT TEAM': ['ASAP Changes', 'Change Requests', 'Tech. Tasks', 'BugFixes', 'Client PDF', 'Migration'],
+    'LDT TEAM': ['ASAP Changes', 'Change Requests', 'Tech. Tasks', 'BugFixes', 'Client PDF'],
     'TWA TEAM': ['ASAP Changes', 'Change Requests', 'Tech. Tasks', 'BugFixes', 'Client PDF', 'Migration'],
-    'CWT TEAM': ['ASAP Changes', 'Change Requests', 'Tech. Tasks', 'BugFixes', 'Client PDF', 'Migration'],
+    'CWT TEAM': ['ASAP Changes', 'Change Requests', 'Tech. Tasks', 'BugFixes'],
     'BA TEAM': ['Change Requests BA'],
     'AMA TEAM': ['ASAP Changes', 'Change Requests', 'Tech. Tasks', 'BugFixes']
 }
@@ -710,9 +710,6 @@ def create_xlsx_report(data):
         # Create consolidated summary across all teams
         create_consolidated_summary(wb, data)
         add_consolidated_status_table(wb)
-        
-        # Add detailed task sheets for each team and category
-        create_detailed_sheets(wb, data)
         
         # Save the workbook
         wb.save(OUTPUT_PATH)
